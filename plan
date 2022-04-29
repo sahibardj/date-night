@@ -1,0 +1,9 @@
+Commands:
+date-night ls-genre [LIMIT]
+date-night surprise-me [genre]
+date-night add movie-name genre year
+date-night ls-watched [LIMIT]
+date-night ls-towatch [LIMIT]
+date-night delete id
+date-night watched id
+

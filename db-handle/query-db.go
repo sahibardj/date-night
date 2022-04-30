@@ -17,4 +17,19 @@ func QueryDb(queryStr string) (rows *sql.Rows, err error) {
 	rows, err = db.Query(queryStr)
 
 	return rows, err
+
+}
+
+func ExecuteDb(queryStr string) (rows sql.Result, err error) {
+
+	db, err := sql.Open("sqlite3", dbPath)
+	if err != nil {
+		return rows, err
+	}
+	defer db.Close()
+
+	rows, err = db.Exec(queryStr)
+
+	return rows, err
+
 }

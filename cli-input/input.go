@@ -39,23 +39,23 @@ func HandleInput() {
 	case "add":
 		handleAddMovie(movieTitle, movieGenre, movieYear)
 	case "ls-watched":
-		handleLsWatched(lsWatchedLim)
+		lsWatchedCmd.Parse(os.Args[2:])
+		handleLsWatched(*lsWatchedLim)
 	case "ls-towatch":
-		handleLsToWatch(lsToWatchLim)
+		lsToWatchCmd.Parse(os.Args[2:])
+		handleLsToWatch(*lsToWatchLim)
 	case "rm":
-		handleRemoveById(delCmdId)
+		delCmd.Parse(os.Args[2:])
+		handleRemoveById(*delCmdId)
 	case "watched":
-		handleMovieWatched(watchedCmdId)
+		watchedCmd.Parse(os.Args[2:])
+		handleMovieWatched(*watchedCmdId)
 	default:
 		printHelp()
 	}
 }
 
 func handleSurpriseMe(param interface{})        {}
-func handleLsWatched(param interface{})         {}
-func handleMovieWatched(param interface{})      {}
-func handleLsToWatch(param interface{})         {}
 func handleAddMovie(param1, p2, p3 interface{}) {}
-func handleRemoveById(param interface{})        {}
 func printHelp() {
 }

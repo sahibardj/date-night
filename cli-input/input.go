@@ -30,9 +30,10 @@ func HandleInput() {
 	watchedCmd := flag.NewFlagSet("watched", flag.ExitOnError)
 	watchedCmdId := watchedCmd.Uint("id", 0, "Enter the id of the movie to mark it watched")
 
-	switch os.Args(1) {
+	switch os.Args[1] {
 	case "ls-genre":
-		handleLsGenre(lsGenreCmdLim)
+		lsGenreCmd.Parse(os.Args[2:])
+		handleLsGenre(*lsGenreCmdLim)
 	case "surprise-me":
 		handleSurpriseMe(surpriseMeGenre)
 	case "add":
@@ -44,8 +45,17 @@ func HandleInput() {
 	case "rm":
 		handleRemoveById(delCmdId)
 	case "watched":
-		handleMoveToWatched(watchedCmdId)
+		handleMovieWatched(watchedCmdId)
 	default:
 		printHelp()
 	}
+}
+
+func handleSurpriseMe(param interface{})        {}
+func handleLsWatched(param interface{})         {}
+func handleMovieWatched(param interface{})      {}
+func handleLsToWatch(param interface{})         {}
+func handleAddMovie(param1, p2, p3 interface{}) {}
+func handleRemoveById(param interface{})        {}
+func printHelp() {
 }

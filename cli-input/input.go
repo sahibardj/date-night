@@ -35,7 +35,8 @@ func HandleInput() {
 		lsGenreCmd.Parse(os.Args[2:])
 		handleLsGenre(*lsGenreCmdLim)
 	case "surprise-me":
-		handleSurpriseMe(surpriseMeGenre)
+		surpriseMeCmd.Parse(os.Args[2:])
+		handleSurpriseMe(*surpriseMeGenre)
 	case "add":
 		handleAddMovie(movieTitle, movieGenre, movieYear)
 	case "ls-watched":
@@ -55,7 +56,6 @@ func HandleInput() {
 	}
 }
 
-func handleSurpriseMe(param interface{})        {}
 func handleAddMovie(param1, p2, p3 interface{}) {}
 func printHelp() {
 }

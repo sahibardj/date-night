@@ -12,7 +12,8 @@ func handleSurpriseMe(genreLable string) {
 
 	queryStr := "SELECT id, title,year FROM movies where watched=false AND "
 	queryStr += fmt.Sprintf("genre='%s'", genreLable)
-	queryStr += " ORDER BY RANDOM()"
+	queryStr += " ORDER BY RANDOM() "
+	queryStr += fmt.Sprintf("LIMIT %d", 1)
 
 	rows, err := dbhandle.QueryDb(queryStr)
 

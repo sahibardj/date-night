@@ -6,7 +6,9 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-func QueryDb(queryStr string) (rows *sql.Rows, err error) {
+// Execute changes in the database.S
+
+func ExecuteDb(queryStr string) (rows sql.Result, err error) {
 
 	db, err := sql.Open("sqlite3", dbPath)
 	if err != nil {
@@ -14,7 +16,7 @@ func QueryDb(queryStr string) (rows *sql.Rows, err error) {
 	}
 	defer db.Close()
 
-	rows, err = db.Query(queryStr)
+	rows, err = db.Exec(queryStr)
 
 	return rows, err
 

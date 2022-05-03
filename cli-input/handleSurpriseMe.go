@@ -8,8 +8,6 @@ import (
 
 func handleSurpriseMe(genreLable string) {
 
-	// @TODO we can extract this to a function
-
 	queryStr := "SELECT id, title,year FROM movies where watched=false AND "
 	queryStr += fmt.Sprintf("genre='%s'", genreLable)
 	queryStr += " ORDER BY RANDOM() "

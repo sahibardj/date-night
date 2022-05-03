@@ -19,14 +19,5 @@ func handleLsToWatch(limit uint) {
 	if err != nil {
 		log.Fatalf("An error occurred: %s \n", err.Error())
 	}
-	for rows.Next() {
-		var genreLable string
-		var title string
-		var id uint
-		var year uint
-		if err := rows.Scan(&id, &title, &year, &genreLable); err != nil {
-			log.Fatalf("An error occurred: %s \n", err.Error())
-		}
-		fmt.Printf("%d \t %s [%d]\t%s\n", id, title, year, genreLable)
-	}
+	printIt(rows)
 }

@@ -8,12 +8,11 @@ import (
 
 func handleRemoveById(idx uint) {
 
-	// @TODO we can extzract this to a function
 
 	queryStr := "DELETE FROM movies where id="
 	queryStr += fmt.Sprintf("%d", idx)
-	rows, err := dbhandle.ExecuteDb(queryStr)
-	println(rows)
+	_, err := dbhandle.ExecuteDb(queryStr)
+	
 	if err != nil {
 		log.Fatalf("An error occurred: %s \n", err.Error())
 	}

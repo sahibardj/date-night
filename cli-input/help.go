@@ -7,27 +7,28 @@ func printHelp() {
 
 	fmt.Printf("\n\n")
 
-	println("To list out all the genre available type 'ls-genre'")
-	println("To have a limited number of genre listed append '-limit=(a number here)'")
+	println("ls-genre\n")
+	println("\t\t To list out all the genres available and can have a limit to  number of genre listed. append '-limit=(a number here)'")
 	fmt.Printf("\n\n")
 
-	println("To list out all the movies you havn't watched 'ls-towatch'")
-	println("To have a limited number of genre listed append '-limit=(a number here)'")
+	println("ls-towatch\n")
+	println("\t\tCommand to have all movies you have to watch. To have a limited number of listing append '-limit=(a number here)'")
 	fmt.Printf("\n\n")
 
-	println("To list out all the movies you have watched 'ls-watched'")
-	println("To have a limited number of genre listed append '-limit=(a number here)'")
+	println("ls-watched\n")
+	println("\t\tCommand to list all movies you have watched. To have a limited number listings  append '-limit=(a number here)'")
 	fmt.Printf("\n\n")
 
-	println("To add a movie")
-	println(" add -title='title' -genre='genre' -year='year'")
+	println(" add -title='title' -genre='genre' -year='year'\n")
+	println("\t\t To add movie to the database")
 	fmt.Printf("\n\n")
 
-	println("SELECT A RANDOM MOVIE")
-	println(("Surprise-me -genre='genre'")
-	fmt.Printf("\n\n")
+	println("rm -id='unique-id'\n")
+	println("\t \t to remove a certain movie from the databse")
+	println("\n\n")
 
-	println("Watched a movie and don't want it on your list?\n Or just don't want a movie on your list anymore? Remove them simply\t ' rm -id[unique id associated] ' \n\n")
+	println("surprise-me -genre='genre'\n")
+	println("\t\t Suggests a random movie from the database that you haven't watched. if genre is not specified it gives random movie.")
 	fmt.Printf("\n\n")
 
 }

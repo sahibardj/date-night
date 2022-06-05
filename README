@@ -25,4 +25,4 @@ Extention:
 Initialize your database:
 
 Change the path of the database
-qlite3 path/to/db -init path/to/init/command
+sqlite3 path/to/db -init path/to/init.sql

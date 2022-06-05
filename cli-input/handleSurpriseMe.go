@@ -18,6 +18,7 @@ func handleSurpriseMe(genreLable string) {
 	if err != nil {
 		log.Fatalf("An error occurred: %s \n", err.Error())
 	}
+	//parse through the resultant rows and display output.
 	for rows.Next() {
 		var title string
 		var id uint

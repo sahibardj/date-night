@@ -8,6 +8,8 @@ import (
 
 func QueryDb(queryStr string) (rows *sql.Rows, err error) {
 
+	// Open sqlite file and query the file using Query function call.
+
 	db, err := sql.Open("sqlite3", dbPath)
 	if err != nil {
 		return rows, err

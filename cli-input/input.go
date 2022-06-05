@@ -7,6 +7,7 @@ import (
 
 func HandleInput() {
 
+	// take inputs from the command line using flags
 	lsGenreCmd := flag.NewFlagSet("ls-genre", flag.ExitOnError)
 	lsGenreCmdLim := lsGenreCmd.Uint("limit", 0, "Specify the maximum number of genre you want to see default 0 will list them all")
 
@@ -29,7 +30,7 @@ func HandleInput() {
 
 	watchedCmd := flag.NewFlagSet("watched", flag.ExitOnError)
 	watchedCmdId := watchedCmd.Uint("id", 0, "Enter the id of the movie to mark it watched")
-
+	// Switch statement to call all respective funtions
 	switch os.Args[1] {
 	case "ls-genre":
 		lsGenreCmd.Parse(os.Args[2:])

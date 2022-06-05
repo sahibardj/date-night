@@ -8,6 +8,7 @@ import (
 
 func handleSurpriseMe(genreLable string) {
 
+	//save the query in a string and pass it to reading function.
 	queryStr := "SELECT id, title,year FROM movies where watched=false AND "
 	queryStr += fmt.Sprintf("genre='%s'", genreLable)
 	queryStr += " ORDER BY RANDOM() "

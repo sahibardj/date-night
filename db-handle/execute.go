@@ -6,7 +6,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-// Execute changes in the database.S
+// Execute changes in the database.
 
 func ExecuteDb(queryStr string) (rows sql.Result, err error) {
 

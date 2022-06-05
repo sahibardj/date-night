@@ -16,6 +16,8 @@ func QueryDb(queryStr string) (rows *sql.Rows, err error) {
 	}
 	defer db.Close()
 
+	//use query funtion to fetch results.
+
 	rows, err = db.Query(queryStr)
 
 	return rows, err
